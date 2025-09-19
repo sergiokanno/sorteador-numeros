@@ -8,7 +8,17 @@ function sortear() {
         return;
     }
 
-    alert(`Quantidade de números: ${quantidade}`);
-    alert(`Do número: ${de}`);
-    alert(`Até o número: ${ate}`);
+    let sorteados = [];
+    let numero;
+
+    for (let i = 0; i < quantidade; i++) {
+        numero = obterNumeroAleatorio(de, ate);
+        sorteados.push(numero);
+    }
+
+    alert(sorteados);
+}
+
+function obterNumeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
